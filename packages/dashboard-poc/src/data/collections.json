@@ -1,0 +1,53 @@
+{
+  "summary": {
+    "total_outstanding_balance": 48200000,
+    "accounts_in_arrears": 3842,
+    "collection_rate": 67.4,
+    "roll_rate": 12.3
+  },
+  "daily_collected": [
+    { "date": "2026-05-07", "amount": 1420000 },
+    { "date": "2026-05-08", "amount": 1650000 },
+    { "date": "2026-05-09", "amount": 980000 },
+    { "date": "2026-05-10", "amount": 1870000 },
+    { "date": "2026-05-11", "amount": 2100000 },
+    { "date": "2026-05-12", "amount": 1340000 },
+    { "date": "2026-05-13", "amount": 870000 },
+    { "date": "2026-05-14", "amount": 1560000 },
+    { "date": "2026-05-15", "amount": 1230000 },
+    { "date": "2026-05-16", "amount": 2050000 },
+    { "date": "2026-05-17", "amount": 1780000 },
+    { "date": "2026-05-18", "amount": 990000 },
+    { "date": "2026-05-19", "amount": 1460000 },
+    { "date": "2026-05-20", "amount": 820000 },
+    { "date": "2026-05-21", "amount": 1910000 },
+    { "date": "2026-05-22", "amount": 1370000 },
+    { "date": "2026-05-23", "amount": 2190000 },
+    { "date": "2026-05-24", "amount": 1080000 },
+    { "date": "2026-05-25", "amount": 1620000 },
+    { "date": "2026-05-26", "amount": 940000 },
+    { "date": "2026-05-27", "amount": 1750000 },
+    { "date": "2026-05-28", "amount": 2040000 },
+    { "date": "2026-05-29", "amount": 1290000 },
+    { "date": "2026-05-30", "amount": 860000 },
+    { "date": "2026-05-31", "amount": 1680000 },
+    { "date": "2026-06-01", "amount": 1130000 },
+    { "date": "2026-06-02", "amount": 1990000 },
+    { "date": "2026-06-03", "amount": 1450000 },
+    { "date": "2026-06-04", "amount": 2150000 },
+    { "date": "2026-06-05", "amount": 1720000 }
+  ],
+  "collection_by_bucket": [
+    { "bucket": "30 days", "rate": 78 },
+    { "bucket": "60 days", "rate": 61 },
+    { "bucket": "90 days", "rate": 44 },
+    { "bucket": "120+ days", "rate": 28 }
+  ],
+  "top_agents": [
+    { "name": "Nomvula Dlamini", "amount_collected": 418000 },
+    { "name": "Sipho Nkosi", "amount_collected": 374000 },
+    { "name": "Thandi Mokoena", "amount_collected": 321000 },
+    { "name": "Bongani Zulu", "amount_collected": 267000 },
+    { "name": "Ayanda Khumalo", "amount_collected": 194000 }
+  ]
+}

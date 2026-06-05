@@ -1,9 +1,6 @@
-function App() {
-  return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-      <h1 className="text-white text-4xl font-bold">Dashboard POC</h1>
-    </div>
-  )
-}
+import CollectionsDashboard from './dashboards/collections/CollectionsDashboard';
 
-export default App
+// Temporary: renders CollectionsDashboard for dev preview. Step 4 replaces this with multi-entry build.
+export default function App() {
+  return <CollectionsDashboard />;
+}
