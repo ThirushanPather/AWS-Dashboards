@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.local
+*.env.*
+.aws/
+*credentials*
+*access-key*
+*.pem
+.DS_Store
+*.log

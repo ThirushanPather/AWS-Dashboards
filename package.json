@@ -1,0 +1,12 @@
+{
+  "name": "dashboard-library",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:poc": "npm run dev --workspace=packages/dashboard-poc",
+    "build:poc": "npm run build --workspace=packages/dashboard-poc",
+    "build:all": "npm run build --workspaces"
+  }
+}
