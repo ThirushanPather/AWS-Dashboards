@@ -5,6 +5,7 @@ import KPICard from '../../components/KPICard';
 import LineChartCard from '../../components/LineChartCard';
 import BarChartCard from '../../components/BarChartCard';
 import PieChartCard from '../../components/PieChartCard';
+import Card from '../../components/Card';
 
 const zarFmt = (n) => 'R ' + n.toLocaleString('en-ZA');
 const today = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -18,21 +19,21 @@ export default function RiskDashboard() {
   const minWO = monthly_writeoffs.reduce((a, b) => b.amount < a.amount ? b : a);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="bg-gray-900 px-8 py-4 flex justify-between items-center">
-        <span className="text-white text-xl font-bold">Risk Monitoring Dashboard</span>
-        <span className="text-gray-400 text-sm">{today}</span>
-      </div>
+    <div className="p-6 text-white">
+      <header className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold">Risk Monitoring Dashboard</h1>
+        <span className="text-gray-300 text-sm">{today}</span>
+      </header>
 
-      <div className="px-8 py-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-4 gap-4">
-          <KPICard title="NPL Rate" value={summary.npl_rate + '%'} subtitle="Non-performing loans" color="#EF4444" />
-          <KPICard title="Total Exposure" value={zarFmt(summary.total_exposure)} subtitle="ZAR" color="#F59E0B" />
-          <KPICard title="High Risk Accounts" value={summary.high_risk_accounts} subtitle="Active monitoring" color="#F59E0B" />
-          <KPICard title="Critical Accounts" value={summary.critical_accounts} subtitle="Immediate action" color="#EF4444" />
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {/* KPIs */}
+        <KPICard title="NPL Rate" value={summary.npl_rate + '%'} subtitle="Non-performing loans" />
+        <KPICard title="Total Exposure" value={zarFmt(summary.total_exposure)} subtitle="ZAR" />
+        <KPICard title="High Risk Accounts" value={summary.high_risk_accounts} subtitle="Active monitoring" />
+        <KPICard title="Critical Accounts" value={summary.critical_accounts} subtitle="Immediate action" />
 
-        <div className="grid grid-cols-2 gap-4 mt-6">
+        {/* Charts */}
+        <div className="md:col-span-2">
           <BarChartCard
             title="Accounts by Risk Band"
             data={accounts_by_risk_band}
@@ -40,6 +41,8 @@ export default function RiskDashboard() {
             yKey="accounts"
             color="#8B5CF6"
           />
+        </div>
+        <div className="md:col-span-2">
           <LineChartCard
             title="Monthly Write-offs (ZAR)"
             data={monthly_writeoffs}
@@ -49,16 +52,19 @@ export default function RiskDashboard() {
             formatValue={zarFmt}
           />
         </div>
-
-        <div className="grid grid-cols-2 gap-4 mt-6">
+        
+        {/* Pie Chart and Summary */}
+        <div>
           <PieChartCard
             title="PD by Segment (%)"
             data={pd_by_segment}
             nameKey="segment"
             valueKey="value"
           />
-          <div className="bg-white rounded-xl shadow-sm p-6">
-            <p className="text-sm font-semibold text-gray-700 mb-4">Risk Summary</p>
+        </div>
+        <div className="md:col-span-3">
+          <Card className="p-6 h-full">
+            <p className="text-sm font-semibold text-gray-200 mb-4">Risk Summary</p>
             <div className="space-y-3 text-sm">
               {[
                 ['Total Accounts', totalAccounts.toLocaleString('en-ZA')],
@@ -67,12 +73,12 @@ export default function RiskDashboard() {
                 [`Lowest Write-off (${minWO.month})`, zarFmt(minWO.amount)],
               ].map(([label, value]) => (
                 <div key={label} className="flex justify-between">
-                  <span className="text-gray-500">{label}</span>
-                  <span className="font-medium text-gray-800">{value}</span>
+                  <span className="text-gray-400">{label}</span>
+                  <span className="font-medium text-gray-100">{value}</span>
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </div>

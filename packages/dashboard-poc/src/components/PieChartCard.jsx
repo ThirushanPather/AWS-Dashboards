@@ -1,15 +1,16 @@
-// Displays a pie chart with legend and percentage tooltips inside a white card.
+// Displays a pie chart inside a glassmorphism card.
 import React from 'react';
 import {
   ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend,
 } from 'recharts';
+import Card from './Card';
 
 const COLORS = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6'];
 
 export default function PieChartCard({ title, data, nameKey, valueKey }) {
   return (
-    <div className="bg-white rounded-xl shadow-sm p-6">
-      <p className="text-sm font-semibold text-gray-700 mb-4">{title}</p>
+    <Card className="p-6">
+      <p className="text-sm font-semibold text-gray-200 mb-4">{title}</p>
       <ResponsiveContainer width="100%" height={220}>
         <PieChart>
           <Pie
@@ -25,14 +26,19 @@ export default function PieChartCard({ title, data, nameKey, valueKey }) {
             ))}
           </Pie>
           <Tooltip
+            contentStyle={{
+              backgroundColor: 'rgba(30, 41, 59, 0.8)',
+              borderColor: 'rgba(255, 255, 255, 0.2)',
+              color: '#fff',
+            }}
             formatter={(val, name, item) => [
               `${(item.payload.percent * 100).toFixed(1)}%`,
               name,
             ]}
           />
-          <Legend />
+          <Legend wrapperStyle={{ color: '#fff' }} />
         </PieChart>
       </ResponsiveContainer>
-    </div>
+    </Card>
   );
 }
