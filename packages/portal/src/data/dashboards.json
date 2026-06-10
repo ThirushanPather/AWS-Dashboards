@@ -1,0 +1,49 @@
+{
+  "departments": [
+    {
+      "id": "collections",
+      "name": "Collections",
+      "description": "Debt collection performance and agent analytics",
+      "colour": "#10B981",
+      "icon": "💰",
+      "dashboards": [
+        {
+          "name": "Daily Collections",
+          "description": "Daily collection amounts and trends",
+          "url": "https://d2fey5na6iqlss.cloudfront.net/collections/",
+          "updated": "Daily"
+        }
+      ]
+    },
+    {
+      "id": "credit",
+      "name": "Credit Originations",
+      "description": "Credit applications, approvals and decline analysis",
+      "colour": "#3B82F6",
+      "icon": "📋",
+      "dashboards": [
+        {
+          "name": "Credit Dashboard",
+          "description": "Application volumes, approval rates and trends",
+          "url": "https://d2fey5na6iqlss.cloudfront.net/credit/",
+          "updated": "Daily"
+        }
+      ]
+    },
+    {
+      "id": "risk",
+      "name": "Risk Monitoring",
+      "description": "NPL rates, exposure and risk band analysis",
+      "colour": "#EF4444",
+      "icon": "⚠️",
+      "dashboards": [
+        {
+          "name": "Risk Dashboard",
+          "description": "NPL, write-offs and probability of default",
+          "url": "https://d2fey5na6iqlss.cloudfront.net/risk/",
+          "updated": "Daily"
+        }
+      ]
+    }
+  ]
+}

@@ -7,6 +7,8 @@
   "scripts": {
     "dev:poc": "npm run dev --workspace=packages/dashboard-poc",
     "build:poc": "npm run build --workspace=packages/dashboard-poc",
+    "dev:portal": "npm run dev --workspace=packages/portal",
+    "build:portal": "npm run build --workspace=packages/portal",
     "build:all": "npm run build --workspaces"
   }
 }
