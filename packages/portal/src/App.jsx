@@ -4,7 +4,7 @@ import Department from './pages/Department'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portal">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/department/:id" element={<Department />} />
